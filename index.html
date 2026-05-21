@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fabricly — Navbar</title>
+  <title>Fabricly Home-Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -152,6 +152,61 @@
       }
     });
   </script>
+
+   <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="relative w-full min-h-screen flex items-center justify-center px-16 max-lg:px-8 max-md:px-5 py-24 max-md:py-16 overflow-hidden">
+ 
+    <!-- Background Image -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <img
+        src="https://www.figma.com/api/mcp/asset/4f453231-9ce6-4d01-ac8d-920a02cba219"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <!-- Dark overlay: rgba(12,8,1,0.6) -->
+      <div class="absolute inset-0" style="background-color: rgba(12,8,1,0.6);"></div>
+    </div>
+ 
+    <!-- Content -->
+    <div class="relative w-full max-w-[1280px] mx-auto flex flex-col items-start">
+      <div class="flex flex-col gap-8 items-start w-full max-w-[560px]">
+ 
+        <!-- Text block -->
+        <div class="flex flex-col gap-6 items-start w-full text-white">
+          <h1
+            class="font-oswald font-bold leading-[1.2] w-full"
+            style="font-size: clamp(44px, 5vw, 72px); letter-spacing: -0.72px;"
+          >
+            Custom apparel manufacturing at factory prices
+          </h1>
+          <p class="font-poppins font-normal leading-[1.5] text-white w-full"
+             style="font-size: clamp(16px, 1.5vw, 18px);">
+            We build garments for brands that demand quality and speed. From concept to shipment, Fabricly handles everything with the precision of a factory and the partnership of a team that cares.
+          </p>
+        </div>
+ 
+        <!-- CTA Buttons -->
+        <div class="flex gap-4 items-center flex-wrap">
+          <a
+            href="#"
+            class="bg-roti border border-roti-dark text-white font-poppins font-medium leading-[1.5] text-[16px] px-3 py-1.5 rounded-sm whitespace-nowrap hover:bg-roti-dark transition-colors duration-200"
+          >
+            Get a Free Quote
+          </a>
+          <a
+            href="#"
+            class="border border-roti-lighter text-roti-lightest font-poppins font-medium leading-[1.5] text-[16px] px-3 py-1.5 rounded-sm whitespace-nowrap hover:bg-white/10 transition-colors duration-200"
+          >
+            Explore Products
+          </a>
+        </div>
+ 
+      </div>
+    </div>
+ 
+  </section>
 
 </body>
 </html>
