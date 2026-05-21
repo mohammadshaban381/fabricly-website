@@ -1,20 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabricly — Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'neutral-darkest': '#0c0801',
+            'neutral-darker': '#24201a',
+            'neutral-dark':   '#54524d',
+            'neutral':        '#858380',
+            'neutral-light':  '#b6b4b2',
+            'neutral-lighter':'#dad9d8',
+            'neutral-lightest':'#f2f2f2',
+            'roti-darkest':   '#3c3216',
+            'roti-darker':    '#50431e',
+            'roti-dark':      '#a0863c',
+            'roti':           '#c9a84c',
+            'roti-light':     '#d9c281',
+            'roti-lighter':   '#f4eddb',
+            'roti-lightest':  '#f9f6ed',
+          },
+          fontFamily: {
+            oswald:  ['Oswald', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          borderRadius: {
+            sm: '4px',
+            md: '8px',
+            lg: '12px',
+          },
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-    
-    <p>
-        Hello World!
-    </p>
+<body class="bg-roti-lightest font-poppins">
 
-    <h1>
-        Hello World!
-    </h1>
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <header class="w-full bg-transparent sticky top-0 z-50" style="background-color: rgba(249,246,237,0.95); backdrop-filter: blur(8px);">
+    <nav class="max-w-[1440px] mx-auto h-[72px] flex items-center px-16 max-lg:px-8 max-md:px-5">
 
+      <!-- Logo -->
+      <div class="flex-1 flex items-center">
+        <a href="#" aria-label="Fabricly Home">
+          <img
+            src="https://www.figma.com/api/mcp/asset/15324274-c1f5-4232-a7dc-c59c9d72bbce"
+            alt="Fabricly Logo"
+            class="h-[44px] w-[84px] object-contain rounded-[2px]"
+          />
+        </a>
+      </div>
+
+      <!-- Desktop Nav Links -->
+      <div class="flex items-center gap-8 max-lg:hidden">
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] whitespace-nowrap hover:text-roti transition-colors duration-200">Home</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] whitespace-nowrap hover:text-roti transition-colors duration-200">Products</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] whitespace-nowrap hover:text-roti transition-colors duration-200">Fabric Range</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] whitespace-nowrap hover:text-roti transition-colors duration-200">Manufacturing Process</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] whitespace-nowrap hover:text-roti transition-colors duration-200">About Us</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] whitespace-nowrap hover:text-roti transition-colors duration-200">Contact Us</a>
+      </div>
+
+      <!-- Desktop CTA -->
+      <div class="flex-1 flex items-center justify-end max-lg:hidden">
+        <a
+          href="#"
+          class="bg-roti border border-roti-dark text-white text-[16px] font-medium leading-[1.5] px-[10px] py-[4px] rounded-sm whitespace-nowrap hover:bg-roti-dark transition-colors duration-200"
+        >
+          Start Inquiry
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button
+        id="hamburger"
+        class="hidden max-lg:flex items-center justify-center w-10 h-10 ml-auto text-neutral-darker"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <!-- Hamburger icon -->
+        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Close icon -->
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden max-lg:block overflow-hidden transition-all duration-300"
+      style="max-height: 0;"
+      role="navigation"
+    >
+      <div class="flex flex-col px-5 pb-6 pt-2 gap-4 bg-roti-lightest border-t border-roti-lighter">
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] py-1 hover:text-roti transition-colors duration-200">Home</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] py-1 hover:text-roti transition-colors duration-200">Products</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] py-1 hover:text-roti transition-colors duration-200">Fabric Range</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] py-1 hover:text-roti transition-colors duration-200">Manufacturing Process</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] py-1 hover:text-roti transition-colors duration-200">About Us</a>
+        <a href="#" class="text-neutral-darker text-[16px] font-normal leading-[1.5] py-1 hover:text-roti transition-colors duration-200">Contact Us</a>
+        <a
+          href="#"
+          class="bg-roti border border-roti-dark text-white text-[16px] font-medium leading-[1.5] px-4 py-2 rounded-sm text-center mt-2 hover:bg-roti-dark transition-colors duration-200"
+        >
+          Start Inquiry
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- placeholder body so the navbar is visible -->
+  <main class="h-screen flex items-center justify-center">
+    <p class="text-neutral-dark font-poppins text-[16px]">Page content goes here…</p>
+  </main>
+
+  <script>
+    const hamburger   = document.getElementById('hamburger');
+    const mobileMenu  = document.getElementById('mobile-menu');
+    const iconOpen    = document.getElementById('icon-open');
+    const iconClose   = document.getElementById('icon-close');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+
+      if (isOpen) {
+        mobileMenu.style.maxHeight = '0';
+        hamburger.setAttribute('aria-expanded', 'false');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      } else {
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        hamburger.setAttribute('aria-expanded', 'true');
+        iconOpen.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+      }
+    });
+  </script>
 
 </body>
 </html>
